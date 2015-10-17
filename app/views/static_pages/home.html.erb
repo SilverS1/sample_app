@@ -1,2 +1,18 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "Home") %>
+
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title><%= yield(:title) %> | The Hobbit Gallery</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<p>Because this is just a test Home page, and not a proper home page, I'm going to do whatever I want with it.
+		</p>
+		<p> So enjoy an entire gallery of Hobbit posters and characters :) </p>
+		<img src = "http://ia.media-imdb.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_SY317_CR0,0,214,317_AL_.jpg" />
+		<img src = "http://static1.businessinsider.com/image/50c9c3eb69beddd378000039/high-tech-sound-and-video-make-the-hobbit-incredibly-immersive.jpg" />
+		<img src = "http://static.comicvine.com/uploads/original/11113/111130081/3856592-5972499353-thdof.jpg" />
+		<img src = "http://d1oi7t5trwfj5d.cloudfront.net/6f/4505e024f811e2938622000a1d0930/file/The-Hobbit-An-Unexpected-Journey-Character-Poster-Kili.jpg" />
+	</body>
+<html>
