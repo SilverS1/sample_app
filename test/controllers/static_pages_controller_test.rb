@@ -4,13 +4,13 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
-    assert_select "title", "Home | The Hobbit Gallery"
+    assert_select "title", "Bilbo Baggins? More Like Bilbo Swaggins"
   end
 
   test "should get help" do
     get :help
     assert_response :success
-    assert_select "title", "Help | The Helpful Help Page, Featuring Bilbo Baggins"
+    assert_select "title", "Help | Bilbo Baggins? More Like Bilbo Swaggins"
   end
   
   test "should get about" do
@@ -18,5 +18,11 @@ class StaticPagesControllerTest < ActionController::TestCase
   	assert_response :success
   	assert_select "title", "About | Bilbo Baggins? More Like Bilbo Swaggins"
   end 
+  
+  test "should get contact" do
+  	get :contact
+  	assert_response :success
+  	assert_select "title", "Contact | Bilbo Baggins? More Like Bilbo Swaggins"
+  end
 
 end
