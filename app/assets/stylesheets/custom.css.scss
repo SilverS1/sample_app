@@ -7,15 +7,12 @@ $light-grey : #777;
 
 body{
 	padding-top: 60px;
-}
-
-section{
-	overflow: auto;
-} 
-
-textarea{
-	resize: vertical;
-}
+	section{
+		overflow: auto;
+	} 
+	textarea{
+		resize: vertical;
+	}
 
 .center{
 	text-align: center;
@@ -24,6 +21,8 @@ textarea{
 .center h1{
 	margin-bottom: 10px;
 } 
+
+}
 
 /* typography */ 
 
