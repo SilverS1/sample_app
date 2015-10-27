@@ -2,3 +2,27 @@ example:
     name: Mister Example
     email: example@mirkwood.com
     password_digest: <%= User.digest('password') %>
+    admin: true
+    
+dumbledore: 
+    name: Albus Dumbledore
+    email: dumbledore@hogwarts.com
+    password_digest: <%= User.digest('password') %> 
+    
+katniss: 
+    name: Katniss Everdeen
+    email: katniss@district12.gov
+    password_digest: <%= User.digest('password') %> 
+    
+darren: 
+    name: Darren Shan
+    email: darrenshan@vampiremountain.com
+    password_digest: <%= User.digest('password') %> 
+    
+<% 30.times do |n| %> 
+user_<%= n %>: 
+    name: <%= "User #{n}" %> 
+    email: <%= "user-#{n}@example.com" %> 
+    password_digest: <%= User.digest('password') %>
+<% end %>
+    
