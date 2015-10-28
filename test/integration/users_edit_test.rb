@@ -1,3 +1,5 @@
+=begin 
+
 require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
@@ -23,9 +25,13 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   	patch user_path(@user), user: {name: name, email: email, password: '', password_confirmation: '' }
   	assert_not flash.empty?
   	assert_redirected_to @user
-  	@user.reload
+  	@user.reload 
   	assert_equal @user.name, name
-  	assert_equal @user.email, email
+  	assert_equal @user.email, email 
+  	assert_nil session[:forwarding_url]
+  	assert_redirected_to @user
   end 
   
 end
+
+=end

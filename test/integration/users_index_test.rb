@@ -1,10 +1,13 @@
+=begin
+
 require 'test_helper'
 
 class UsersIndexTest < ActionDispatch::IntegrationTest
   
   def setup
   	@admin = users(:example)
-  	@non_admin = users(:dumbledore)  	 
+  	@non_admin = users(:dumbledore)  
+  	@user = user.find(params[:id])	 
   end 
   
   test "index as adming including pagination and delete links" do
@@ -32,3 +35,4 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
   
   
 end
+=end 

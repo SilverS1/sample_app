@@ -3,26 +3,36 @@ example:
     email: example@mirkwood.com
     password_digest: <%= User.digest('password') %>
     admin: true
+    activated: true 
+    activated_at: Time.zone.now
     
 dumbledore: 
     name: Albus Dumbledore
     email: dumbledore@hogwarts.com
     password_digest: <%= User.digest('password') %> 
+    activated: true 
+    activated_at: Time.zone.now
     
 katniss: 
     name: Katniss Everdeen
     email: katniss@district12.gov
-    password_digest: <%= User.digest('password') %> 
+    password_digest: <%= User.digest('password') %>
+    activated: true 
+    activated_at: Time.zone.now 
     
 darren: 
     name: Darren Shan
     email: darrenshan@vampiremountain.com
     password_digest: <%= User.digest('password') %> 
+    activated: true 
+    activated_at: Time.zone.now
     
 <% 30.times do |n| %> 
 user_<%= n %>: 
     name: <%= "User #{n}" %> 
     email: <%= "user-#{n}@example.com" %> 
     password_digest: <%= User.digest('password') %>
+    activated: true 
+    activated_at: Time.zone.now
 <% end %>
     
