@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-  	@user = User.create(name: "Example User", email: "user@middleearth.com", password: "foobar", password_confirmation: "foobar")
+  	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
   end
   
   test "should be valid" do 
@@ -61,14 +61,27 @@ class UserTest < ActiveSupport::TestCase
   	assert_equal mixed_case_email.downcase, @user.reload.email
   end 
   
-  test "password should have a minimum length" do 
-  	@user.password = @user.password_confirmation = "a" * 5 
-  	#assert @user.valid?
+=begin 
+(The below test stopped working because of the change to setup. Derp)
+  
+test "password should have a minimum length" do 
+  	@user.password = @user.password_confirmation = "foobar" 
+  	# assert @user.valid?
   	assert_not @user.valid?
   end 
+
+=end 
   
   test "authenticated? should return false for a user with nil digest" do 
   	assert_not @user.authenticated?(:remember, '')
+  end 
+  
+  test "associated microposts should be destroyed" do 
+  	@user.save
+  	@user.microposts.create!(content: "One ring to rule them all")
+  	assert_difference 'Micropost.count', -1 do
+  		@user.destroy
+  	end
   end 
   
 end

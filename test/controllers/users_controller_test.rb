@@ -65,10 +65,37 @@ class UsersControllerTest < ActionController::TestCase
 		patch :update, id: @other_user, user: { password: "", password_confirmation: "", admin: true } 
 		assert_not @other_user.reload.admin?
 	end 
+	
+=begin
+	
+	test "should redirect destroy for wrong micropost" do 
+		log_in_as(users(:example))
+		micropost = microposts(:bilbo_baggins)
+		assert_no_difference 'Micropost.count' do 
+			delete :destroy, id: micropost
+		end
+		assert_redirected_to root_url
+	end
   
+=end
   
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

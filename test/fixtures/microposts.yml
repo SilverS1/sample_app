@@ -1,0 +1,46 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+hobbits:
+  content: "But what about second breakfast?"
+  created_at: <%= 10.minutes.ago %> 
+  user: example
+
+bilbo_baggins:
+  content: "Not all who wonder are lost."
+  created_at: <%= 3.years.ago %>
+  user: example
+  
+
+ring: 
+    content: "One ring to rule them all"
+    created_at: <%= Time.zone.now %>
+    user: example
+    
+<% 30.times do |n| %>
+micropost_<%= n %>:
+    content: <%= Faker::Lorem.sentence(5) %>
+    created_at: <%= 42.days.ago %>
+    user: example    
+<% end %>
+
+harry_potter: 
+    content: "Expelliarmus!"
+    created_at: <%= 2.years.ago %>
+    user: example
+
+firefly:
+    content: "I swear on my pretty little bonnet I will end you"
+    created_at: <%= 3.days.ago %>
+    user: dumbledore
+    
+battlestar:
+    content: "What the frak?" 
+    created_at: <%= 10.minutes.ago %>
+    user: example
+    
+internet_box: 
+    content: "Not the bees!"
+    created_at: <%= 4.hours.ago %>
+    user: example
+    
+

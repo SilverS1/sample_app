@@ -1,9 +1,27 @@
-<div class = "center jumbotron">
-	<h1>Home</h1>
-	<p>Because this is just a test Home page, and not a proper home page, I'm going to do whatever I want with it.
-	</p>
-	<p> So enjoy this hobbit picture, since I can't post a gallery :) </p>
-	<img src = "http://ia.media-imdb.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_SY317_CR0,0,214,317_AL_.jpg" />
+<% if logged_in? %>
+	<div class = "row" >
+		<aside class = "cold-md-4" 
+			<section class = "user_info">
+				<%= render 'shared/user_info' %>
+			</section>
+			<section class = "micropost_form">
+				<%= render 'shared/micropost_form' %>
+			</section>
+		</aside>
+		<div class = "col-md-8" >
+			<h3>Micropost Feed</h3>
+			<%= render 'shared/feed' %>
+		</div>
+	</div>
+<% else %>
+	<div class = "center jumbotron">
+		<h1>Home</h1>
+		<p>Because this is just a test Home page, and not a proper home page, I'm going to do whatever I want with it.
+		</p>
+		<p> So enjoy this hobbit picture, since I can't post a gallery :) </p>
+		<img src = "http://ia.media-imdb.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_SY317_CR0,0,214,317_AL_.jpg" />
 	
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> 
-</div> 
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> 
+	</div> 
+
+<% end %>
