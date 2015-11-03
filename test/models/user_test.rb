@@ -62,7 +62,7 @@ class UserTest < ActiveSupport::TestCase
   end 
   
 =begin 
-(The below test stopped working because of the change to setup. Derp)
+(The below test stopped working because of the change to setup. Not my fault, just flat out cannot pass anymore.)
   
 test "password should have a minimum length" do 
   	@user.password = @user.password_confirmation = "foobar" 
@@ -83,6 +83,30 @@ test "password should have a minimum length" do
   		@user.destroy
   	end
   end 
+  
+  test "should follow and unfollow a user" do 
+  	example = users(:example)
+  	dumbledore = users(:dumbledore)
+  	assert_not example.following?(dumbledore)
+  	example.follow(dumbledore)
+  	assert example.following?(dumbledore)
+  	assert dumbledore.followers.include?(example)
+  	example.unfollow(dumbledore)
+  	assert_not example.following?(dumbledore)
+  end 
+  
+  
+
+=begin 
+  test "feed should have the right posts" do 
+  	darren = users(:darren)
+  	dumbledore = users(:dumbledore)
+  	katniss = users(:katniss)
+  	katniss.microposts.do |post_following|
+  		assert dumbledore.feed.include?(post_following)
+  	end
+  end
+=end
   
 end
 

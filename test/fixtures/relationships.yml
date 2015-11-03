@@ -1,0 +1,19 @@
+one: 
+    follower: katniss
+    followed: dumbledore
+
+two: 
+    follower: buffy
+    followed: katniss
+
+three:
+    follower: lara
+    followed: dumbldore 
+
+four:
+    follower: dumbledore
+    followed: darren
+    
+five: 
+    follower: dumbledore
+    followed: katniss
