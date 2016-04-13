@@ -19,7 +19,7 @@ class FollowingTest < ActionDispatch::IntegrationTest
   
   test "followers page" do 
   	get followers_user_path(@user)
-  	assert_not @ user.followers.empty?
+  	assert_not @user.followers.empty?
   end
   
   test "should follow a user the standard way" do 

@@ -56,11 +56,13 @@ class PasswordResetsController < ApplicationController
   end
   
   # Finds out if the user if valid (has been authorized and confirmed). Will redirect them back to home page if not. 
+  
   def valid_user
   	unless @user && @user.activated? && @user.authenticated?(:reset, params[:id])
   		redirect_to root_url
   	end 
   end
+
   
   def check_expiration
   	if @user.password_reset_expired?
